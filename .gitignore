@@ -1,0 +1,15 @@
+
+*.asv
+*.DS_Store
+*.m~
+configuration/
+data/
+*.mexa64
+cnn-models/
+classifiers/
+results/
+feature-extraction-models/
+
+
+
+external/cnn-finetune

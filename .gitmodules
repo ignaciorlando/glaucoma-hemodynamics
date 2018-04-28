@@ -1,0 +1,3 @@
+[submodule "external/cnn-finetune"]
+	path = external/cnn-finetune
+	url = https://github.com/ignaciorlando/cnn-finetune.git
