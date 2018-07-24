@@ -1,7 +1,25 @@
 # Simulation of retinal hemodynamics
 
 This code corresponds to our MICCAI 2018 paper on retinal hemodynamics simulation. If you use this code, please cite:
-Orlando, JI, Barbosa Breda, J, van Keer, K, Blaschko, MB, Blanco, PJ and Bulant, C. "Towards a glaucoma risk index based on simulated hemodynamics from fundus images". MICCAI 2018.
+Orlando, JI, Barbosa Breda, J, van Keer, K, Blaschko, MB, Blanco, PJ and Bulant, C. "Towards a glaucoma risk index based on simulated hemodynamics from fundus images". MICCAI 2018. 
+You can find the PDF [here](https://arxiv.org/pdf/1805.10273.pdf).
+
+```
+@incollection{Orlando2018a,
+year={2018},
+booktitle={Medical Image Computing and Computer-Assisted Intervention -- MICCAI},
+series={Lecture Notes in Computer Science},
+editor={Frangi, A. F. and Schnabel, J. A. and Davatzikos, C. and Alberola-Lopez, C. and Fichtinger, G.},
+title={Towards a glaucoma risk index based on simulated hemodynamics from fundus images},
+publisher={Springer},
+author={Orlando, Jos\'{e} Ignacio and
+    van Keer, Karel and
+    Barbosa Breda, Jo\~{a}o and
+    Blaschko, Matthew B. and
+    Blanco, Pablo and
+    Bulant, Carlos Alberto},
+}
+```
 
 ## Installation
 

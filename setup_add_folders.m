@@ -50,7 +50,6 @@ addpath(genpath(fullfile(my_root_position, 'experiments'))) ;
 addpath(genpath(fullfile(my_root_position, 'external', 'hemodynamics-solver'))) ;
 addpath(genpath(fullfile(my_root_position, 'external', 'skeletonization'))) ;
 addpath('external')
-run external/cnn-finetune/dependencies/vlfeat/toolbox/vl_setup.m
 
 % compile the markSchmidt code
 markSchmidt_code_path = fullfile('external', 'markSchmidt');
