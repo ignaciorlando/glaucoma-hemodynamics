@@ -6,7 +6,7 @@
 % -------------------------------------------------------------------------
 
 % input folder
-input_folder = fullfile(pwd, 'data', 'RITE-training');
+input_folder = fullfile(pwd, 'data', 'LES-AV');
 
 % output folder
-output_folder = fullfile(pwd, 'data', 'RITE-training');
+output_folder = fullfile(pwd, 'data', 'LES-AV');
