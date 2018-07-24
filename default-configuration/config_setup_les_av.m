@@ -1,8 +1,7 @@
 
-% CONFIG_SETUP_LEUVEN_EYE_STUDY
+% CONFIG_SETUP_LES_AV
 % -------------------------------------------------------------------------
-% This script setups the main parameters to process the Leuven Eye Study
-% database
+% This script setups the main parameters to process the LES-AV database
 % -------------------------------------------------------------------------
 
 % input folder

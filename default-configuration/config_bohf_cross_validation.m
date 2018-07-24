@@ -7,7 +7,7 @@
 % -------------------------------------------------------------------------
 
 % database used for the experiments
-database = 'LeuvenEyeStudy';
+database = 'LES-AV';
 
 % input folder
 input_data_path = fullfile(pwd, 'data');

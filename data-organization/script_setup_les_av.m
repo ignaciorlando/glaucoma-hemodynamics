@@ -1,5 +1,5 @@
 
-% SCRIPT_SETUP_LEUVEN_EYE_STUDY
+% SCRIPT_SETUP_LES_AV
 % -------------------------------------------------------------------------
 % This script organizes the Leuven Eye Study
 % -------------------------------------------------------------------------
@@ -7,7 +7,7 @@
 %% set up variables
 
 % set up main variables
-config_setup_leuven_eye_study;
+config_setup_les_av;
 
 %% unzip the file
 

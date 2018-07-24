@@ -6,14 +6,14 @@
 % -------------------------------------------------------------------------
 
 % database
-database = 'LeuvenEyeStudy';
+database = 'LES-AV';
 
 % folder where the data is stored
 root_folder = fullfile(pwd, 'data', database);
 
 % pre-trained centroids filename (including path)
 centroid_filename = fullfile(pwd, 'feature-extraction-models', ...
-    'centroids_k=10_trained-on-LeuvenEyeStudy_SC2.mat');
+    'centroids_k=10_trained-on-LES-AV_SC2.mat');
 
 % output feature path
 output_path = fullfile(root_folder, 'bag-of-hemodynamic-features');

@@ -6,7 +6,7 @@
 % -------------------------------------------------------------------------
 
 % database name
-database = 'LeuvenEyeStudy';
+database = 'LES-AV';
 
 % data path
 root_path = fullfile(pwd, 'data', database);
