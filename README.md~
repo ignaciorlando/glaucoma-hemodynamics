@@ -34,9 +34,9 @@ author={Orlando, Jos\'{e} Ignacio and
 
 ## Data preparation
 
-LES-AV is a new data set introduced by our team, comprising 22 fundus pictures with vessel annotations and labels for arteries and veins. You can download the database from [this link](https://ignaciorlando.github.io/publication/miccai-hemodynamics/). If you use such this database, please cite our paper.
+LES-AV is a new data set introduced by our team, comprising 22 fundus pictures with vessel annotations and labels for arteries and veins. You can download the database from [this link](). If you use such this database, please cite our paper.
 
-- ```script_setup_les_av```: organizes the data of the LES-AV for our experiments.
+- ```script_setup_les_av```: organizes the data of the Leuven Eye Study for our experiments.
 
 ## Precomputed resources
 
