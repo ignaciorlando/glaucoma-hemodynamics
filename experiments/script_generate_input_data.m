@@ -9,20 +9,14 @@ config_generate_input_data;
 
 %% set up variables
 
-% prepare arteries folder
-arteries_folder = fullfile(input_folder, 'arteries');
-% prepare od folder
-od_folder = fullfile(input_folder, 'od-masks');
-
-
 % prepare output data folder
 output_data_folder = fullfile(output_folder, 'input_data');
 if exist(output_data_folder, 'dir') == 0
     mkdir(output_data_folder);
 end
 
-% retrieve arteries filenames
-filenames = dir(fullfile(arteries_folder, '*.png'));
+% retrieve filenames
+filenames = dir(fullfile(od_folder, '*.png'));
 filenames = {filenames.name};
 
 %% process data
@@ -34,7 +28,11 @@ for i = 1 : length(filenames)
     current_filename = filenames{i};
     
     % open the segmentation of the arteries
-    arteries_segm = imread(fullfile(arteries_folder, current_filename));
+    if are_those_predictions
+        arteries_segm = imread(fullfile(arteries_folder, strcat(current_filename(1:end-4), '_arteries_threshold.png')));
+    else
+        arteries_segm = imread(fullfile(arteries_folder, strcat(current_filename(1:end-4), '_gt_arteries.png')));
+    end
     % open the segmentation of the od
     od_segm = imread(fullfile(od_folder, current_filename));
     

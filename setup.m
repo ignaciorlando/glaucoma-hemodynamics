@@ -10,16 +10,16 @@ my_root_position = pwd;
 % An ignored folder, namely configuration, will be created for you so you
 % just have to edit configuration scripts there without having to commit
 % every single change you made
-if exist('configuration', 'file')==0
+if exist(fullfile(my_root_position, 'configuration'), 'file')==0
     % Create folder
-    mkdir('configuration');
+    mkdir(fullfile(my_root_position, 'configuration'));
 end
-config_filenames = dir(fullfile('default-configuration', '*.m'));
+config_filenames = dir(fullfile(my_root_position, 'default-configuration', '*.m'));
 config_filenames = { config_filenames.name };
 for i = 1 : length(config_filenames)
-    if exist(fullfile('configuration', config_filenames{i}), 'file')==0
+    if exist(fullfile(my_root_position, 'configuration', config_filenames{i}), 'file')==0
         % Copy the default configuration file
-        copyfile(fullfile('default-configuration', config_filenames{i}), fullfile('configuration', config_filenames{i}));
+        copyfile(fullfile(my_root_position, 'default-configuration', config_filenames{i}), fullfile(my_root_position, 'configuration', config_filenames{i}));
     end
 end
     
@@ -30,7 +30,7 @@ if exist('external', 'file')==0
 end
 
 % Skeletonization library
-skeletonization_library = fullfile('external', 'skeletonization');
+skeletonization_library = fullfile(my_root_position, 'external', 'skeletonization');
 if exist(skeletonization_library, 'file') == 0
     % Download the library
     websave('Skeleton.zip', 'http://www.cs.smith.edu/~nhowe/research/code/Skeleton.zip');
