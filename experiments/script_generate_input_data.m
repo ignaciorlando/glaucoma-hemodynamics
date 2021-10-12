@@ -24,29 +24,37 @@ filenames = {filenames.name};
 % for each arteries file
 for i = 1 : length(filenames)
 
-    % get current filename
-    current_filename = filenames{i};
+    try
     
-    % open the segmentation of the arteries
-    if are_those_predictions
-        arteries_segm = imread(fullfile(arteries_folder, strcat(current_filename(1:end-4), '_arteries_threshold.png')));
-    else
-        arteries_segm = imread(fullfile(arteries_folder, strcat(current_filename(1:end-4), '_gt_arteries.png')));
+        % get current filename
+        current_filename = filenames{i};
+
+        % open the segmentation of the arteries
+        if are_those_predictions
+            arteries_segm = imread(fullfile(arteries_folder, strcat(current_filename(1:end-4), '_arteries_threshold.png')));
+        else
+            arteries_segm = imread(fullfile(arteries_folder, strcat(current_filename(1:end-4), '_gt_arteries.png')));
+        end
+        % open the segmentation of the od
+        od_segm = imread(fullfile(od_folder, current_filename));
+
+        fprintf('Processing %s\n', current_filename);
+
+        % process the segmentation to recover the skeleton with trees ids 
+        [trees_ids, root_pixels] = skeletonize_vascular_tree(arteries_segm, od_segm);
+        % and process the skeletonization to recover the vessel radius
+        trees_radius = estimate_vessel_radius(arteries_segm, trees_ids > 0);
+        % generate graph
+        graph = initialize_graph_from_skeleton(trees_ids, root_pixels);
+
+        % save the mat file in the output folder
+        save(fullfile(output_data_folder, strcat(current_filename(1:end-3), 'mat')), ...
+            'trees_ids', 'trees_radius', 'graph');
+        
+    catch EX
+        
+        disp(EX)
+        
     end
-    % open the segmentation of the od
-    od_segm = imread(fullfile(od_folder, current_filename));
-    
-    fprintf('Processing %s\n', current_filename);
-    
-    % process the segmentation to recover the skeleton with trees ids 
-    [trees_ids, root_pixels] = skeletonize_vascular_tree(arteries_segm, od_segm);
-    % and process the skeletonization to recover the vessel radius
-    trees_radius = estimate_vessel_radius(arteries_segm, trees_ids > 0);
-    % generate graph
-    graph = initialize_graph_from_skeleton(trees_ids, root_pixels);
-    
-    % save the mat file in the output folder
-    save(fullfile(output_data_folder, strcat(current_filename(1:end-3), 'mat')), ...
-        'trees_ids', 'trees_radius', 'graph');
     
 end
